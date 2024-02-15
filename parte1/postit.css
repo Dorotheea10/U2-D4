@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #808080; /* Colore grigio per lo sfondo */
+}
+
+.lavagna {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 900px; /* Larghezza totale della lavagna */
+}
+
+.post-it {
+  width: calc(25% - 20px); /* Larghezza del 22% con margini inclusi per ottenere 4 post-it per riga */
+  height: 220px;
+  cursor: pointer;
+  margin-bottom: 20px; /* Spazio tra i post-it (default) */
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: bold;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.post-it:nth-child(2) {
+  margin-bottom: 40px; /* Spazio diverso tra il secondo e il terzo post-it */
+}
+
+/* Altri stili per animazioni, colori, etc. */
+
+.rotate-left {
+  transform: rotate(-5deg); /* Applica una rotazione di -5 gradi al post-it */
+}
+
+.rotate-right {
+  transform: rotate(5deg); /* Applica una rotazione di 5 gradi al post-it */
+}
+
+.rotate-left-slightly {
+  transform: rotate(-2deg); /* Applica una leggera rotazione di -2 gradi al post-it */
+}
+
+.rotate-right-slightly {
+  transform: rotate(2deg); /* Applica una leggera rotazione di 2 gradi al post-it */
+}
+
+.post-it:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Ombra più accentuata al passaggio del mouse */
+}
+
+.task-title {
+  margin: 0; /* Rimuove il margine del paragrafo */
+}
+
+.additional-text {
+  margin: 5px 0 0; /* Aggiunge uno spazio sopra al testo aggiuntivo */
+}
+
+.yellow {
+  background-color: #ecedb7; /* Giallo */
+}
+
+.purple {
+  background-color: #b6b5d5; /* Viola */
+}
+
+.green {
+  background-color: #bae1bc; /* Verde */
+}

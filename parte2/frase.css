@@ -1,0 +1,95 @@
+/*
+1 creazione del testo e formattazione di 1 parola da far ruotare
+2 inserimento delle altre 2 parole
+3 sovrapporre le 3 parole
+4 mostrare 1 parola e nascondere le altre 2
+5 animare 1 parola (fadein - fadeout con spostamento)
+6 animare le altre 2 parole
+7 ritardare progressivamente l'animazione delle altre 2 parole 
+*/
+
+body {
+  font-family: "Bree Serif", sans-serif;
+  background-color: #f0f0f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#testoAlternato {
+  text-align: center;
+}
+
+#testoAlternato p {
+  font-size: 20px;
+  margin: 0;
+}
+
+.parole {
+  display: inline-block;
+  position: relative;
+}
+
+.parole i {
+  opacity: 0;
+  position: absolute;
+  top: -30px; /* Spostato in alto per nascondere la parola inizialmente */
+  left: 0;
+  animation: animaParola 8s linear infinite;
+}
+
+.parole i:nth-child(2) {
+  animation-delay: 4s; /* Ritarda l'animazione della seconda parola di 4 secondi */
+}
+
+.parole i:nth-child(3) {
+  animation-delay: 8s; /* Ritarda l'animazione della terza parola di 8 secondi */
+}
+
+@keyframes animaParola {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
+
+.parole i:hover {
+  opacity: 0;
+}
+
+.parole i:nth-child(4) {
+  animation: nuovaParola 8s linear infinite 12s; /* Inizia dopo 12 secondi */
+}
+
+@keyframes nuovaParola {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+}
